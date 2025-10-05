@@ -547,7 +547,7 @@ class DataParallelPPOActor(BasePPOActor):
 
                     # all return: (bsz, response_length)
                     calculate_entropy = False
-                    if entropy_coeff != 0 or loss_mode == "lp_reg" or loss_mode == "8020_split" or loss_mode == "check_lp_reg":
+                    if entropy_coeff != 0 or loss_mode == "8020_split":
                         calculate_entropy = True
                     entropy, log_prob = self._forward_micro_batch(micro_batch=data, temperature=temperature, calculate_entropy=calculate_entropy)
 
@@ -620,7 +620,7 @@ class DataParallelPPOActor(BasePPOActor):
                             loss_agg_mode=loss_agg_mode,
                         )
 
-                    elif loss_mode == "lp_reg" or loss_mode == "check_lp_reg":
+                    elif loss_mode == "lp_reg":
                         if self.config.minp_ref_dist:
                             pos_tgt_log_prob = ref_log_prob.detach()
                             neg_tgt_log_prob = ref_log_prob.detach()
