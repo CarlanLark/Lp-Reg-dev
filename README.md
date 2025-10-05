@@ -45,7 +45,7 @@ On-policy Lp-Reg shows a stable performance increasing around 1,000 training ste
 </div>
 
 # Acknowledgement
-We implement our reinforcement learning algorithm extending from [veRL](https://github.com/volcengine/verl) and [Entropy-Mechanism-of-RL](https://github.com/PRIME-RL/Entropy-Mechanism-of-RL/tree/main/recipe). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference. 
+We implement our reinforcement learning algorithm extending from [veRL](https://github.com/volcengine/verl) and [Entropy-Mechanism-of-RL](https://github.com/PRIME-RL/Entropy-Mechanism-of-RL/tree/main/recipe). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference. Thanks to them for their excellent work!
 
 ## Citation
 ```bibtex
