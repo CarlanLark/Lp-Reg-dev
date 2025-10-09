@@ -720,7 +720,6 @@ def compute_policy_loss_lp_reg(
         target_kl = kl_penalty(log_prob[batch_idx, seq_idx], tgt_log_prob[batch_idx, seq_idx], kl_type)
         pg_losses[batch_idx, seq_idx] = -advantages[batch_idx, seq_idx] * ratio[batch_idx, seq_idx] + ppo_kl_coef * target_kl
     
-    import madbg; madbg.set_trace(ip='0.0.0.0', port=1337+torch.distributed.get_rank())
     # positive samples
     if len(pos_indices) > 0:
         pos_logp_k = max(1, int(len(pos_indices) * logp_pos_k_percent))

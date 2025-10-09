@@ -11,7 +11,7 @@ exp_name="Qwen3_14b_lp_reg_onpolicy_64gpu/$(date +%Y%m%d_%H%M%S)"
 adv_estimator=grpo
 
 
-# core param is minp_p_threshold and logp_neg_k_percent
+# core params are minp_p_threshold and logp_neg_k_percent
 loss_mode="lp_reg"
 kl_type="low_var_kl"
 minp_old_log_prob=True
