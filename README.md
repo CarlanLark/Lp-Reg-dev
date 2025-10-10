@@ -1,5 +1,5 @@
 # Lp-Reg-Dev
-The development version of [Lp-Reg](https://github.com/CarlanLark/Lp-Reg)
+You can reproduce the results from our paper using this development version, which is based on [Entropy-Mechanism-of-RL](https://github.com/PRIME-RL/Entropy-Mechanism-of-RL/tree/main/recipe). This version utilizes an earlier release of [veRL](https://github.com/volcengine/verl). Currently, we are integrating [Lp-Reg](https://github.com/CarlanLark/Lp-Reg) into the latest version of [veRL](https://github.com/volcengine/verl) to deliver a cleaner and more streamlined implementation.
 
 ## Introduction
 This paper investigates the exploration dynamics within RLVR and identifies a key issue of its training collapse: the gradual elimination of valuable low-probability exploratory tokens, which we term *reasoning sparks*. We find that while abundant in pre-trained models, these sparks are systematically extinguished during RLVR due to over-penalization, leading to a degeneracy in exploration. In contrast, indiscriminate entropy bonuses often fail by amplifying destructive noise. To address this, we introduce Low-probability Regularization (Lp-Reg). Its core mechanism regularizes the policy towards a heuristic proxy distribution. This proxy is constructed by filtering out presumed noise tokens and re-normalizing the distribution over the remaining candidates. The result is a less-noisy proxy where the probability of *reasoning sparks* is amplified, which then serves as a soft regularization target to shield these valuable tokens from elimination via KL divergence. 
@@ -50,8 +50,8 @@ We implement our reinforcement learning algorithm extending from [veRL](https://
 ## Citation
 ```bibtex
 @article{huang2025lowprob,
-  title   = {Low-probability Tokens Sustain Exploration in Reinforcement Learning with Verifiable Reward },
-  author  = {Guanhua Huang, Tingqiang Xu , Mingze Wang, Qi Yi, Xue Gong, Siheng Li, Ruibin Xiong, Kejiao Li, Yuhao Jiang, Bo Zhou},
+  title   = {Low-probability Tokens Sustain Exploration in Reinforcement Learning with Verifiable Reward},
+  author  = {Guanhua Huang, Tingqiang Xu, Mingze Wang, Qi Yi, Xue Gong, Siheng Li, Ruibin Xiong, Kejiao Li, Yuhao Jiang, Bo Zhou},
   year    = {2025},
   journal = {arXiv preprint},
 }
